@@ -182,7 +182,7 @@ class DeepFM(object):
         y_fm = tf.add(linear_terms, second_order)
 
         with tf.name_scope("dnn"):
-            hidden_1=self.hidden_layer(X, "hidden1", n_hidden1, activation="relu")
+            hidden_1=self.hidden_layer(V, "hidden1", n_hidden1, activation="relu")
             hidden_2=self.hidden_layer(hidden_1, "hidden2",n_hidden2, activation="relu")
             logits=self.hidden_layer(hidden_2, "outputs", n_output)
 
